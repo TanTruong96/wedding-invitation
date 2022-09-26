@@ -1,19 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
+import { MainTitle } from '../../common/styles';
 
 const StyledTransferInfo = styled.div`
   display: flex;
   flex-direction: column;
 
   padding: 48px 16px;
-`;
-const MainTitle = styled.h1`
-  font-size: 24px;
-  color: ${props => props.theme.colors.black2C2};
-  font-weight: 600;
-  text-align: center;
-
-  margin-bottom: 32px;
 `;
 const TabsHeader = styled.div`
   display: flex;
@@ -69,21 +62,56 @@ const TextDes = styled.span`
   font-size: 16px;
 `;
 
+const data = [
+  {
+    id: 1,
+    name: 'Nguyễn Thị Thúy',
+    representative: 'Cô dâu',
+    phoneNumber: '0977325665',
+    bankNumber: '0977325665',
+    momoNumber: '0977325665',
+  },
+  {
+    id: 2,
+    name: 'Trương Võ Hoài Nhân',
+    representative: 'Chú rễ',
+    phoneNumber: '0902667040',
+    bankNumber: '828384859999',
+    momoNumber: '0902667040',
+  },
+];
+
+
 function TransferInfo() {
+  const [tabActive, setTabActive] = useState(1);
+  const [tabInfo, setTabInfo] = useState(data[0]);
+
+  const handleActiveTabClick = (id) => {
+    const info = data.find(item => item.id === id);
+    setTabActive(id);
+    setTabInfo(info);
+  };
+
   return (
     <StyledTransferInfo>
       <MainTitle>
         Gửi lời chúc đến đôi uyên ương
       </MainTitle>
       <TabsHeader>
-        <TabInfo tabActive>Cô dâu</TabInfo>
-        <TabInfo>Chú rể</TabInfo>
+        {data.map(item => (
+          <TabInfo
+            tabActive={tabActive === item.id}
+            onClick={() => handleActiveTabClick(item.id)}
+          >
+            {item.representative}
+          </TabInfo>
+        ))}
       </TabsHeader>
       <TabsContent>
-        <RowInfo><TextTitle widthFull>Nguyễn Thị Thúy</TextTitle></RowInfo>
-        <RowInfo><TextTitle>SĐT </TextTitle><TextDes>0977325665</TextDes></RowInfo>
-        <RowInfo><TextTitle>MB Bank </TextTitle><TextDes>0977325665</TextDes></RowInfo>
-        <RowInfo><TextTitle>Momo </TextTitle><TextDes>0977325665</TextDes></RowInfo>
+        <RowInfo><TextTitle widthFull>{tabInfo?.name}</TextTitle></RowInfo>
+        <RowInfo><TextTitle>SĐT </TextTitle><TextDes>{tabInfo.phoneNumber}</TextDes></RowInfo>
+        <RowInfo><TextTitle>MB Bank </TextTitle><TextDes>{tabInfo.bankNumber}</TextDes></RowInfo>
+        <RowInfo><TextTitle>Momo </TextTitle><TextDes>{tabInfo.momoNumber}</TextDes></RowInfo>
       </TabsContent>
     </StyledTransferInfo>
   )

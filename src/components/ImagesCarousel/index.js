@@ -1,29 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Navigation, Autoplay } from "swiper";
+import { Autoplay, Navigation } from "swiper";
 import "swiper/css";
-import "swiper/css/navigation";
 import "swiper/css/autoplay";
+import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ImageSlideTwo from '../../assets/images/wedding-banner-2-img.jpg';
 import ImageSlideThree from '../../assets/images/wedding-banner-3-img.jpg';
 import ImageSlideOne from '../../assets/images/wedding-banner-img.jpg';
+import { MainTitle } from '../../common/styles';
 
 const StyledImagesCarousel = styled.div`
   padding: 48px 16px;
 
   display: flex;
   flex-direction: column;
-`;
-const MainTitle = styled.h1`
-  text-align: center;
-  color: ${props => props.theme.colors.black2C2};
-  text-transform: capitalize;
-
-  font-size: 24px;
-  font-weight: 600;
-
-  margin-bottom: 48px;
 `;
 const CarouselSwiper = styled.div`
   height: 360px;
@@ -120,6 +111,7 @@ const ViewMoreBtn = styled.button`
   background-color: transparent;
   font-family: inherit;
 `;
+
 function ImagesCarousel() {
   return (
     <StyledImagesCarousel>

@@ -4,6 +4,7 @@ import FamilyInfo from '../../components/FamilyInfo';
 import ImagesCarousel from '../../components/ImagesCarousel';
 import Introduce from '../../components/Introduce';
 import Location from '../../components/Location';
+import PartyInfo from '../../components/PartyInfo';
 import TransferInfo from '../../components/TransferInfo';
 
 const StyledWeddingPage = styled.div`
@@ -24,6 +25,7 @@ function WeddingPage() {
       <Introduce />
       <FamilyInfo />
       <ImagesCarousel />
+      <PartyInfo />
       <TransferInfo />
       <Location />
     </StyledWeddingPage>
