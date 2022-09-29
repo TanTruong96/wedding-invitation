@@ -1,12 +1,86 @@
 import { createGlobalStyle } from "styled-components";
 
+
 const GlobalStyle = createGlobalStyle`
+  /* @font-face {
+    font-family: 'Be Vietnam Pro';
+    src: url('./assets/fonts/BeVietnamPro-Bold.woff2') format('woff2'),
+        url('./assets/fonts/BeVietnamPro-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Be Vietnam Pro';
+    src: url('./assets/fonts/BeVietnamPro-Light.woff2') format('woff2'),
+        url('./assets/fonts/BeVietnamPro-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Be Vietnam Pro';
+    src: url('./assets/fonts/BeVietnamPro-Regular.woff2') format('woff2'),
+        url('./assets/fonts/BeVietnamPro-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Brittany';
+    src: url('./assets/fonts/iCielBrittanySignature-Regular.woff2') format('woff2'),
+        url('./assets/fonts/iCielBrittanySignature-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  } */
+
+/* @font-face {
+  font-family: 'Prata';
+  src: url('./assets/fonts/Prata-Regular.woff2') format('woff2'),
+      url('./assets/fonts/Prata-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lora';
+  src: url('./assets/fonts/Lora-Bold.woff2') format('woff2'),
+      url('./assets/fonts/Lora-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+} */
+
+  @font-face {
+    font-family: 'Viaoda Libre';
+    src: url('./assets/fonts/ViaodaLibre-Regular.woff2') format('woff2'),
+        url('./assets/fonts/ViaodaLibre-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    text-rendering: auto;
+    box-sizing: border-box;
+  }
+
   html, body {
     overflow: auto;
     font-size: 14px;
     color: ${props => props.theme.colors.black565};
 
-    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Viaoda Libre', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1,

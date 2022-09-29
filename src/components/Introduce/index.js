@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import WeddingBanner from '../../assets/images/wedding-banner-2-img.jpg';
-import WeddingBackground from '../../assets/images/background-img-2.webp';
+import WeddingBanner from '../../assets/images/introduce-img-4.png';
+// import WeddingBackground from '../../assets/images/background-img-2.webp';
 
 const StyledIntroduce = styled.div`
   width: 100%;
@@ -13,7 +13,7 @@ const StyledIntroduce = styled.div`
 const BlockImage = styled.div`
   overflow: hidden;
   position: relative;
-  height: 429px;
+  height: 100%;
 
   &:before {
     content: '';
@@ -24,7 +24,7 @@ const BlockImage = styled.div`
     top: 0;
     left: 0;
 
-    background: linear-gradient(0deg, rgba(44, 44, 34, 0.2), rgba(44, 44, 34, 0.2));
+    background: linear-gradient(0deg, rgba(44, 44, 34, 0.4), rgba(44, 44, 34, 0.25));
   }
 `;
 const Image = styled.img`
@@ -34,85 +34,36 @@ const Image = styled.img`
   object-fit: cover;
 `;
 const BlockContent = styled.div`
-  height: calc(100vh - 478px);
-  overflow: hidden;
+  width: 100%;
+  height: 100%;
 
-  padding: 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
 
-  display: flex;
-  flex-direction: column;
-
-  position: relative;
+  padding: 60px 48px;
 `;
 const Title = styled.h1`
-  font-size: 48px;
-  font-weight: bold;
+  font-size: 24px;
+  font-weight: 500;
   line-height: 120%;
+  text-align: center;
   letter-spacing: 0.05em;
-  margin-bottom: 12px;
 
-  color: ${props => props.theme.colors.black2C2};
-
-  font-family: "Brittany";
-  padding: 12px 24px 0 0;
-`;
-
-const SubTitle = styled(Title)`
-  font-size: 36px;
+  margin-bottom: 16px;
+  color: ${props => props.theme.colors.yellowFFD};
+  font-family: "Viaoda Libre";
 `;
 const Name = styled(Title)`
-  font-size: 26px;
+  font-size: 56px;
   font-weight: 600;
-  padding: 0;
+  line-height: 73px;
 
-  font-family: unset;
-  text-align: right;
-  text-transform: uppercase;
+  margin: 0;
 `;
-const SubName = styled(Name)`
-  font-size: 14px;
-  color: unset;
-`;
-// const DateGroup = styled(Name)`
-//   font-weight: 400;
-//   text-transform: uppercase;
-//   margin-bottom: 0;
-//   margin-top: 16px;
-
-//   display: flex;
-//   align-items: center;
-//   justify-content: flex-end;
-// `;
-// const DateText = styled.span`
-//   font-size: 16px;
-//   font-weight: 500;
-//   display: block;
-
-//   padding: 0 6px;
-//   font-family: 'Lora'
-// `;
-/* const DateNumber = styled(DateText)`
-  font-size: 24px;
-  padding: 0 8px;
-  font-weight: 600;
-`; */
-const BlockImageTopRight = styled.div`
-  position: absolute;
-  top: -30px;
-  right: -60px;
-  width: 180px;
-  height: 180px;
-
-  overflow: hidden;
-  transform: rotate(200deg);
-`;
-const BlockImageBottomLeft = styled(BlockImageTopRight)`
-  top: unset;
-  right: unset;
-  bottom: -30px;
-  left: -60px;
-
-  transform: rotate(-320deg);
+const Date = styled(Title)`
+  margin-bottom: 0;
+  font-size: 18px;
 `;
 
 function Introduce() {
@@ -121,22 +72,12 @@ function Introduce() {
       <BlockImage>
         <Image src={WeddingBanner} alt='img' />
       </BlockImage>
-
       <BlockContent>
-        <Title>Save</Title>
-        <SubTitle>the</SubTitle>
-        <Title>Date</Title>
-
+        <Title>Chúng tôi cưới</Title>
         <Name>Thúy Nguyễn</Name>
-        <SubName>and</SubName>
+        <Name>&</Name>
         <Name>Nhân Trương</Name>
-
-        <BlockImageTopRight>
-          <Image src={WeddingBackground} alt='img' />
-        </BlockImageTopRight>
-        <BlockImageBottomLeft>
-          <Image src={WeddingBackground} alt='img' />
-        </BlockImageBottomLeft>
+        <Date>26 . 12 . 2022</Date>
       </BlockContent>
     </StyledIntroduce>
   )

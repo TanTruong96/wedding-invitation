@@ -115,7 +115,7 @@ const ViewMoreBtn = styled.button`
 function ImagesCarousel() {
   return (
     <StyledImagesCarousel>
-      <MainTitle>Album ảnh cưới</MainTitle>
+      <MainTitle>Khoảnh khắc ngọt ngào</MainTitle>
       <CarouselSwiper>
         <Swiper
           navigation={true}

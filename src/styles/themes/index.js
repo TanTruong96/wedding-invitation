@@ -21,6 +21,7 @@ export const theme = {
     red9C1: '#9C1E22',
     orangeDC9: '#DC9E6D',
     orangeB45: '#B45733',
+    yellowFFD: '#FFDCA7',
     whiteFFF: '#FFFFFF',
   }
 }

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import FamilyInfo from '../../components/FamilyInfo';
 import ImagesCarousel from '../../components/ImagesCarousel';
 import Introduce from '../../components/Introduce';
-import Location from '../../components/Location';
+// import Location from '../../components/Location';
 import PartyInfo from '../../components/PartyInfo';
 import TransferInfo from '../../components/TransferInfo';
 
@@ -27,7 +27,7 @@ function WeddingPage() {
       <ImagesCarousel />
       <PartyInfo />
       <TransferInfo />
-      <Location />
+      {/* <Location /> */}
     </StyledWeddingPage>
   )
 }
