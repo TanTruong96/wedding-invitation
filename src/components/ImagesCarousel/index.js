@@ -5,22 +5,53 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
+import HeartImage from '../../assets/images/heart-img.png';
 import ImageSlideTwo from '../../assets/images/wedding-banner-2-img.jpg';
 import ImageSlideThree from '../../assets/images/wedding-banner-3-img.jpg';
 import ImageSlideOne from '../../assets/images/wedding-banner-img.jpg';
-import { MainTitle } from '../../common/styles';
+import { BlockWrapper, MainTitle } from '../../common/styles';
 
-const StyledImagesCarousel = styled.div`
-  padding: 48px 16px;
+const BlockTop = styled.div`
+  width: 100%;
+  position: absolute;
+  top: 32px;
+  left: 0;
 
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 9;
+`;
+const BlockImage = styled.div`
+  width: 40px;
+  position: absolute;
+  top: 0;
+  right: 6px;
+
+  z-index: 9;
+`;
+const Image = styled.img`
+  width: 100%;
+  object-fit: cover;
+`;
+const CustomMainTitle = styled(MainTitle)`
+  width: fit-content;
+
+  font-size: 18px;
+  background-color: ${props => props.theme.colors.pinkFDA};
+  color: ${props => props.theme.colors.whiteFFF};
+
+  border-radius: 20px;
+  padding: 6px 16px;
+
 `;
 const CarouselSwiper = styled.div`
   height: 360px;
   border-radius: 10px;
   overflow: hidden;
-  margin-bottom: 32px;
+  /* margin-bottom: 32px; */
+  border: 2px solid ${props => props.theme.colors.pinkFDA};
   .mySwiper {
     width: 100%;
     height: 100%;
@@ -53,69 +84,16 @@ const ImageSlide = styled.img`
   object-fit: cover;
   transition: all ease 400ms;
 `;
-const ImagesGallary = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-const ImageList = styled.ul`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  margin-bottom: 24px;
-`;
-const ImageItem = styled.li`
-  border-radius: 4px;
-  overflow: hidden;
-  cursor: pointer;
-
-  position: relative;
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-    background: transparent;
-  }
-  &:hover {
-    &:before {
-      z-index: 9;
-      background: linear-gradient(0deg, rgba(44, 44, 34, 0.2), rgba(44, 44, 34, 0.2));
-    }
-    > img {
-      transform: scale(1.24);
-    }
-  }
-`;
-const ImageViewMore = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-const ViewMoreBtn = styled.button`
-  width: fit-content;
-  height: 40px;
-
-  padding: 0 24px;
-
-  border-radius: 4px;
-  text-align: center;
-  font-weight: 500;
-
-  color: ${props => props.theme.colors.black2C2};
-  border: 1px solid ${props => props.theme.colors.black2C2};
-
-  cursor: pointer;
-  background-color: transparent;
-  font-family: inherit;
-`;
 
 function ImagesCarousel() {
   return (
-    <StyledImagesCarousel>
-      <MainTitle>Khoảnh khắc ngọt ngào</MainTitle>
+    <BlockWrapper>
+      <BlockTop>
+        <CustomMainTitle>Khoảnh khắc ngọt ngào</CustomMainTitle>
+        <BlockImage>
+          <Image src={HeartImage} alt='img' />
+        </BlockImage>
+      </BlockTop>
       <CarouselSwiper>
         <Swiper
           navigation={true}
@@ -138,28 +116,7 @@ function ImagesCarousel() {
           </SwiperSlide>
         </Swiper>
       </CarouselSwiper>
-
-      <ImagesGallary>
-        <ImageList>
-          <ImageItem>
-            <ImageSlide src={ImageSlideOne} alt='img-slide' />
-          </ImageItem>
-          <ImageItem>
-            <ImageSlide src={ImageSlideOne} alt='img-slide' />
-          </ImageItem>
-          <ImageItem>
-            <ImageSlide src={ImageSlideOne} alt='img-slide' />
-          </ImageItem>
-          <ImageItem>
-            <ImageSlide src={ImageSlideOne} alt='img-slide' />
-          </ImageItem>
-        </ImageList>
-
-        <ImageViewMore>
-          <ViewMoreBtn>Xem Thêm</ViewMoreBtn>
-        </ImageViewMore>
-      </ImagesGallary>
-    </StyledImagesCarousel>
+    </BlockWrapper>
   )
 }
 

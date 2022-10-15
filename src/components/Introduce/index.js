@@ -1,47 +1,50 @@
 import React from 'react';
-import styled from 'styled-components';
-import WeddingBanner from '../../assets/images/introduce-img-4.png';
-// import WeddingBackground from '../../assets/images/background-img-2.webp';
+import styled, { css } from 'styled-components';
+import WeddingBanner from '../../assets/images/wedding-anime-img.png';
+import ImageDecor from '../../assets/images/wedding-flower-img.png';
 
 const StyledIntroduce = styled.div`
   width: 100%;
-  height: 100vh;
+  height: auto;
 
   position: relative;
   overflow: hidden;
+  background-color: ${props => props.theme.colors.green386};
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 40px 16px 16px;
 `;
 const BlockImage = styled.div`
   overflow: hidden;
   position: relative;
-  height: 100%;
-
-  &:before {
-    content: '';
-    width: 100%;
-    height: 100%;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    background: linear-gradient(0deg, rgba(44, 44, 34, 0.4), rgba(44, 44, 34, 0.25));
-  }
+  margin-bottom: ${props => props.noMargin ? 0 : '40px'};
 `;
 const Image = styled.img`
   width: 100%;
-  height: 100%;
-
   object-fit: cover;
+
+  ${props => props.matrix && css`
+    -moz-transform: matrix(-1, 0, 0, 1, 0, 0);
+    -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
+    -o-transform: matrix(-1, 0, 0, 1, 0, 0);
+  `}
+
+  ${props => props.widthFit && css`
+    width: 110px;
+  `}
 `;
 const BlockContent = styled.div`
   width: 100%;
-  height: 100%;
+  flex-grow: 1;
 
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  padding: 60px 48px;
+  padding: 0 24px;
+  ${props => props.topContent && css`
+    flex-grow: unset;
+    margin-bottom: 16px;
+  `}
 `;
 const Title = styled.h1`
   font-size: 24px;
@@ -51,34 +54,74 @@ const Title = styled.h1`
   letter-spacing: 0.05em;
 
   margin-bottom: 16px;
-  color: ${props => props.theme.colors.yellowFFD};
-  font-family: "Viaoda Libre";
+  color: ${props => props.theme.colors.brownBEA};
 `;
 const Name = styled(Title)`
-  font-size: 56px;
+  font-size: 48px;
   font-weight: 600;
   line-height: 73px;
 
-  margin: 0;
+  margin-bottom: 24px;
+  font-style: italic;
+  color: ${props => props.colorBrownBEA ? props.theme.colors.brownBEA : props.theme.colors.whiteFFF};
 `;
 const Date = styled(Title)`
   margin-bottom: 0;
-  font-size: 18px;
+  font-size: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    padding: 0 12px;
+    &:nth-child(2) {
+      border: 2px solid ${props => props.theme.colors.brownBEA};
+      border-top: 0;
+      border-bottom: 0;
+    }
+  }
+`;
+const BlockDecor = styled.div`
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 24px;
+`;
+const DashedLine = styled.div`
+  width: 117px;
+  flex-shrink: 0;
+  border-top: 2px dashed ${props => props.theme.colors.brownBEA};
+
+  margin-top: 50px;
 `;
 
 function Introduce() {
   return (
     <StyledIntroduce>
+      {/* <BlockContent topContent>
+        <Name colorBrownBEA>Save the Date</Name>
+      </BlockContent> */}
       <BlockImage>
         <Image src={WeddingBanner} alt='img' />
       </BlockImage>
       <BlockContent>
-        <Title>Chúng tôi cưới</Title>
-        <Name>Thúy Nguyễn</Name>
-        <Name>&</Name>
-        <Name>Nhân Trương</Name>
-        <Date>26 . 12 . 2022</Date>
+        <Title>The wedding of</Title>
+        <Name>Thúy & Nhân</Name>
+        <Date><span>26</span><span>DEC</span><span>2022</span></Date>
       </BlockContent>
+      <BlockDecor>
+        <BlockImage noMargin>
+          <Image matrix widthFit src={ImageDecor} alt='img' />
+        </BlockImage>
+        <DashedLine><span /></DashedLine>
+        <BlockImage noMargin>
+          <Image widthFit src={ImageDecor} alt='img' />
+        </BlockImage>
+      </BlockDecor>
     </StyledIntroduce>
   )
 }
