@@ -20,7 +20,14 @@ const StyledIntroduce = styled.div`
 const BlockImage = styled.div`
   overflow: hidden;
   position: relative;
-  margin-bottom: ${props => props.noMargin ? 0 : '40px'};
+  /* margin-bottom: ${props => props.noMargin ? 0 : '40px'};
+  margin-top: ${props => props.noMargin ? 0 : "20px"}; */
+
+
+  ${props => props.noMargin && css`
+    margin-top: 0;
+    margin-bottom: 0;
+  `}
 `;
 const Image = styled.img`
   width: 100%;
@@ -57,7 +64,7 @@ const Title = styled.h1`
   color: ${props => props.theme.colors.brownBEA};
 `;
 const Name = styled(Title)`
-  font-size: 48px;
+  font-size: 42px;
   font-weight: 600;
   line-height: 73px;
 
@@ -75,12 +82,21 @@ const Date = styled(Title)`
 
   span {
     padding: 0 12px;
+    font-family: "UTMViceroyJF";
     &:nth-child(2) {
       border: 2px solid ${props => props.theme.colors.brownBEA};
       border-top: 0;
       border-bottom: 0;
     }
   }
+`;
+const StyledSpan = styled.span`
+  padding: 0 12px;
+    &:nth-child(2) {
+      border: 2px solid ${props => props.theme.colors.brownBEA};
+      border-top: 0;
+      border-bottom: 0;
+    }
 `;
 const BlockDecor = styled.div`
   width: 100%;
@@ -102,16 +118,13 @@ const DashedLine = styled.div`
 function Introduce() {
   return (
     <StyledIntroduce>
-      {/* <BlockContent topContent>
-        <Name colorBrownBEA>Save the Date</Name>
-      </BlockContent> */}
       <BlockImage>
         <Image src={WeddingBanner} alt='img' />
       </BlockImage>
       <BlockContent>
         <Title>The wedding of</Title>
         <Name>Thúy & Nhân</Name>
-        <Date><span>26</span><span>DEC</span><span>2022</span></Date>
+        <Date><StyledSpan>26</StyledSpan><StyledSpan>DEC</StyledSpan><StyledSpan>2022</StyledSpan></Date>
       </BlockContent>
       <BlockDecor>
         <BlockImage noMargin>

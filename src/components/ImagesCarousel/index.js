@@ -6,9 +6,12 @@ import "swiper/css/autoplay";
 import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import HeartImage from '../../assets/images/heart-img.png';
-import ImageSlideTwo from '../../assets/images/wedding-banner-2-img.jpg';
-import ImageSlideThree from '../../assets/images/wedding-banner-3-img.jpg';
-import ImageSlideOne from '../../assets/images/wedding-banner-img.jpg';
+import ImageSlideTwo from '../../assets/images/img-wedding-album-2.jpg';
+import ImageSlideThree from '../../assets/images/img-wedding-album-3.jpg';
+import ImageSlideOne from '../../assets/images/img-wedding-album-1.jpg';
+import ImageSlideFour from '../../assets/images/img-wedding-album-4.jpg';
+import ImageSlideFive from '../../assets/images/img-wedding-album-5.jpg';
+import ImageSlideSix from '../../assets/images/img-wedding-album-6.jpg';
 import { BlockWrapper, MainTitle } from '../../common/styles';
 
 const BlockTop = styled.div`
@@ -106,13 +109,28 @@ function ImagesCarousel() {
           }}
         >
           <SwiperSlide>
+            {/* <ImageSlide srcSet={`${ImageSlideOne} 2x`} alt='img-slide' /> */}
             <ImageSlide src={ImageSlideOne} alt='img-slide' />
           </SwiperSlide>
           <SwiperSlide>
+            {/* <ImageSlide srcSet={`${ImageSlideTwo} 2x`} alt='img-slide' /> */}
             <ImageSlide src={ImageSlideTwo} alt='img-slide' />
           </SwiperSlide>
           <SwiperSlide>
+            {/* <ImageSlide srcSet={`${ImageSlideThree} 2x`} alt='img-slide' /> */}
             <ImageSlide src={ImageSlideThree} alt='img-slide' />
+          </SwiperSlide>
+          <SwiperSlide>
+            {/* <ImageSlide srcSet={`${ImageSlideFour} 2x`} alt='img-slide' /> */}
+            <ImageSlide src={ImageSlideFour} alt='img-slide' />
+          </SwiperSlide>
+          <SwiperSlide>
+            {/* <ImageSlide srcSet={`${ImageSlideFive} 2x`} alt='img-slide' /> */}
+            <ImageSlide src={ImageSlideFive} alt='img-slide' />
+          </SwiperSlide>
+          <SwiperSlide>
+            {/* <ImageSlide srcSet={`${ImageSlideSix} 2x`} alt='img-slide' /> */}
+            <ImageSlide src={ImageSlideSix} alt='img-slide' />
           </SwiperSlide>
         </Swiper>
       </CarouselSwiper>
