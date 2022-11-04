@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import FemaleImage from '../../assets/images/wedding-avt-female-img.png';
-import MaleImage from '../../assets/images/wedding-avt-male-img.png';
+import FemaleImage from '../../assets/images/img-wedding-album-7.jpg';
+import MaleImage from '../../assets/images/img-wedding-album-8.jpg';
 import FlowerTopImage from '../../assets/images/wedding-flower-3-img.png';
 import FlowerBottomImage from '../../assets/images/wedding-flower-4-img.png';
 import { BlockImage, BlockWrapper, DashedLine, Image } from '../../common/styles';
@@ -12,7 +12,7 @@ const BlockTop = styled.div`
 `;
 const BlockMaleInfo = styled(BlockTop)`
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex: 1 0 34%;
   padding: 24px 0 24px 16px;
 `;
@@ -83,32 +83,40 @@ const TextDescription = styled.p`
   font-style: italic;
 `;
 
-function WeddingStories() {
+function WeddingStories({ isVuQuy, data }) {
   return (
     <BlockWrapper>
       <DashedLine top />
-      <BlockImage customWidth={150}>
-        <Image src={FlowerTopImage} alt='img' />
+      <BlockImage customWidth={126}>
+        <Image src={FlowerTopImage} alt='story-image' />
       </BlockImage>
 
       <BlockTop>
         <BlockMaleInfo>
-          <CustomBlockImage>
-            <Image circle src={FemaleImage} alt='img' />
+          <CustomBlockImage customWidth={150} customHeight={150}>
+            <Image circle src={FemaleImage} alt='story-image' />
           </CustomBlockImage>
           <BlockName mt16>
-            <TextName>Thúy</TextName>
+            <TextName>
+              {isVuQuy ? data.bride : data.groom}
+            </TextName>
             <SubName>&</SubName>
-            <TextName textRight>Nhân</TextName>
+            <TextName textRight>
+              {!isVuQuy ? data.bride : data.groom}
+            </TextName>
           </BlockName>
         </BlockMaleInfo>
         <BlockFemaleInfo>
           <BlockName>
             <TextTitle>Save the Date</TextTitle>
-            <TextDate>26 <span>DEC</span> 2022</TextDate>
+            <TextDate>
+              {data.dateTime.date}{' '}
+              <span>{data.dateTime.month}</span>{' '}
+              {data.dateTime.year}
+            </TextDate>
           </BlockName>
-          <CustomBlockImage>
-            <Image circle src={MaleImage} alt='img' />
+          <CustomBlockImage customWidth={150} customHeight={150}>
+            <Image circle src={MaleImage} alt='story-image' />
           </CustomBlockImage>
         </BlockFemaleInfo>
       </BlockTop>
@@ -118,8 +126,8 @@ function WeddingStories() {
           Cái gọi là duyên phận, chính là trong ngàn vạn người gặp được người cần gặp, trong ngàn vạn năm, giữa mênh mông hoang hoải vô tận của thời gian, không sớm một bước cũng không muộn một bước.
         </TextDescription>
 
-      <CustomBlockImage customWidth={150}>
-        <Image src={FlowerBottomImage} alt='img' />
+      <CustomBlockImage customWidth={126}>
+        <Image src={FlowerBottomImage} alt='story-image' />
       </CustomBlockImage>
       </BlockBottom>
 

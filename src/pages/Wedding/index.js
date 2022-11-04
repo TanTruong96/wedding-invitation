@@ -1,6 +1,7 @@
-import moment from 'moment';
 import React from 'react';
-import styled from 'styled-components';
+import { useLocation } from 'react-router';
+import { TanHonData, VuQuyData, VUQUY_PATHNAME } from '../../common/data';
+import { StyledWeddingPage } from '../../common/styles';
 import CountDown from '../../components/CountDown';
 import FamilyInfo from '../../components/FamilyInfo';
 import Footer from '../../components/Footer';
@@ -9,29 +10,22 @@ import Introduce from '../../components/Introduce';
 import PartyInfo from '../../components/PartyInfo';
 import WeddingStories from '../../components/WeddingStories';
 
-const StyledWeddingPage = styled.div`
-  overflow: hidden;
-
-  max-width: 425px;
-  width: 100%;
-  margin: 0 auto;
-
-  display: flex;
-  flex-direction: column;
-  background-color: ${props => props.theme.colors.beigeF5E};
-`;
-
 function WeddingPage() {
-  const timeStamp =  moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
-  const finalDate = moment('2022-12-26 11:00:00', 'YYYY-MM-DD HH:mm:ss');
+  const location = useLocation();
+  const weddingData = location?.pathname.includes(VUQUY_PATHNAME) ? VuQuyData : TanHonData;
+  const isVuQuy =  location?.pathname.includes(VUQUY_PATHNAME) ? true : false
+
   return (
     <StyledWeddingPage>
-      <Introduce />
-      <FamilyInfo />
+      <Introduce data={weddingData.introduce} />
+      <FamilyInfo isVuQuy={isVuQuy} data={weddingData.familyInfo} />
       <ImagesCarousel />
-      <WeddingStories />
-      <PartyInfo />
-      <CountDown timeStamp={timeStamp} finalDate={finalDate} />
+      <WeddingStories isVuQuy={isVuQuy} data={weddingData.introduce} />
+      <PartyInfo isVuQuy={isVuQuy} data={weddingData.partyInfo} />
+      <CountDown
+        timeStamp={weddingData.timeStamp}
+        finalDate={weddingData.finalDate}
+      />
       <Footer />
       {/* <TransferInfo /> */}
       {/* <Location /> */}

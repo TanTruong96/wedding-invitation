@@ -70,39 +70,61 @@ const TextInside = styled.span`
   `}
 `;
 
-function PartyInfo() {
+function PartyInfo({ isVuQuy, data }) {
   return (
     <BlockWrapper>
       <DashedLine top />
       {/* <BlockImage>
         <Image src={FlowerImage} alt='img' />
       </BlockImage> */}
-      <Text>Trân trọng kính mời</Text>
-      <MainText>Quý khách</MainText>
+      <Text>{data.mainTitle}</Text>
+      <MainText>{data.guess}</MainText>
 
-      <Text>Đến dự buổi tiệc </Text>
-      <Text>chung vui cùng gia đình chúng tôi tại <TextInside brown>Tư gia</TextInside></Text>
-      <Text mt48>Vào lúc</Text>
+      <Text>{data.meetingNote }</Text>
+      <Text>{data.withFamily} <TextInside brown>{data.weddingPlace}</TextInside></Text>
+      <Text mt48>{data.weddingTimeTitle}</Text>
 
       <TimeGroup>
         <TimeItem>
-          <TextRed>11:00</TextRed>
-          <TextRed>Thứ 2</TextRed>
+          <TextRed>
+            {isVuQuy ? data.vuQuyTime : data.tanHonTime}
+          </TextRed>
+          <TextRed>
+            {isVuQuy ? data.vuQuyWeekDays : data.tanHonWeekDays}
+          </TextRed>
         </TimeItem>
 
         <TimeItem>
-          <TextRed fsLarge>26</TextRed>
+          <TextRed fsLarge>
+            {isVuQuy ? data.vuQuyDate : data.tanHonDate}
+          </TextRed>
         </TimeItem>
 
         <TimeItem>
-          <TextRed>Tháng 12</TextRed>
-          <TextRed>Năm 2022</TextRed>
+          <TextRed>
+            {isVuQuy ? data.vuQuyMonth : data.tanHonMonth}
+          </TextRed>
+          <TextRed>
+            {isVuQuy ? data.vuQuyYear : data.tanHonYear}
+          </TextRed>
         </TimeItem>
       </TimeGroup>
-      <SubText>(Nhằm ngày <TextInside orange>04</TextInside> tháng <TextInside orange>Chạp</TextInside> năm <TextInside orange>Nhâm Dần</TextInside>)</SubText>
+      <SubText>(Nhằm ngày{' '}
+        <TextInside orange>
+          {isVuQuy ? data.vuQuyNegativeDate : data.tanHonNegativeDate}
+        </TextInside>
+        {' '}tháng{' '}
+        <TextInside orange>
+          {isVuQuy ? data.vuQuyNegativeMonth : data.tanHonNegativeMonth}
+        </TextInside>
+        {' '}năm{' '}
+        <TextInside orange>
+          {isVuQuy ? data.vuQuyNegativeYear : data.tanHonNegativeYear}
+        </TextInside>)
+      </SubText>
 
-      <Text>Sự hiện diện của <TextInside green>Quý khách</TextInside></Text>
-      <Text>là niềm vinh dự cho gia đình chúng tôi</Text>
+      <Text>{data.presetTitle} <TextInside green>{data.guess}</TextInside></Text>
+      <Text>{data.fun}</Text>
     </BlockWrapper>
   )
 }

@@ -1,5 +1,17 @@
 import styled, { css } from "styled-components";
 
+const StyledWeddingPage = styled.div`
+  overflow: hidden;
+
+  max-width: 425px;
+  width: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  background-color: ${props => props.theme.colors.beigeF5E};
+`;
+
 const BlockWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -29,11 +41,12 @@ const BlockImage = styled.div`
 `;
 const Image = styled.img`
   width: 100%;
+  height: 100%;
   object-fit: cover;
 
   ${props => props.circle && css`
     border-radius: 50%;
-    background-color: ${props => props.theme.colors.green386};
+    /* background-color: ${props => props.theme.colors.green386}; */
   `}
 `;
 const DashedLine = styled.div`
@@ -57,4 +70,4 @@ const DashedLine = styled.div`
   `}
 `;
 
-export { BlockWrapper, MainTitle, BlockImage, Image, DashedLine };
+export { StyledWeddingPage, BlockWrapper, MainTitle, BlockImage, Image, DashedLine };

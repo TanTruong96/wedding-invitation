@@ -6,12 +6,15 @@ import "swiper/css/autoplay";
 import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import HeartImage from '../../assets/images/heart-img.png';
-import ImageSlideTwo from '../../assets/images/img-wedding-album-2.jpg';
+import ImageSlideOne from '../../assets/images/img-wedding-album-10.jpg';
+import ImageSlideEight from '../../assets/images/img-wedding-album-11.jpg';
+import ImageSlideNine from '../../assets/images/img-wedding-album-12.jpg';
 import ImageSlideThree from '../../assets/images/img-wedding-album-3.jpg';
-import ImageSlideOne from '../../assets/images/img-wedding-album-1.jpg';
 import ImageSlideFour from '../../assets/images/img-wedding-album-4.jpg';
-import ImageSlideFive from '../../assets/images/img-wedding-album-5.jpg';
-import ImageSlideSix from '../../assets/images/img-wedding-album-6.jpg';
+import ImageSlideTwo from '../../assets/images/img-wedding-album-7.jpg';
+import ImageSlideSix from '../../assets/images/img-wedding-album-8.jpg';
+import ImageSlideFive from '../../assets/images/img-wedding-album-9.jpg';
+import ImageSlideSeven from '../../assets/images/wedding-banner-2-img.jpg';
 import { BlockWrapper, MainTitle } from '../../common/styles';
 
 const BlockTop = styled.div`
@@ -86,7 +89,47 @@ const ImageSlide = styled.img`
   height: 100%;
   object-fit: cover;
   transition: all ease 400ms;
+  border-radius: 10px;
 `;
+
+const dataSlide = [
+  {
+    id: 1,
+    image: ImageSlideOne,
+  },
+  {
+    id: 2,
+    image: ImageSlideTwo,
+  },
+  {
+    id: 3,
+    image: ImageSlideThree,
+  },
+  {
+    id: 4,
+    image: ImageSlideFour,
+  },
+  {
+    id: 5,
+    image: ImageSlideFive,
+  },
+  {
+    id: 6,
+    image: ImageSlideSix,
+  },
+  {
+    id: 7,
+    image: ImageSlideSeven,
+  },
+  {
+    id: 8,
+    image: ImageSlideEight,
+  },
+  {
+    id: 9,
+    image: ImageSlideNine,
+  },
+];
 
 function ImagesCarousel() {
   return (
@@ -94,7 +137,7 @@ function ImagesCarousel() {
       <BlockTop>
         <CustomMainTitle>Khoảnh khắc ngọt ngào</CustomMainTitle>
         <BlockImage>
-          <Image src={HeartImage} alt='img' />
+          <Image src={HeartImage} alt='slide-image' />
         </BlockImage>
       </BlockTop>
       <CarouselSwiper>
@@ -108,30 +151,11 @@ function ImagesCarousel() {
             disableOnInteraction: false,
           }}
         >
-          <SwiperSlide>
-            {/* <ImageSlide srcSet={`${ImageSlideOne} 2x`} alt='img-slide' /> */}
-            <ImageSlide src={ImageSlideOne} alt='img-slide' />
-          </SwiperSlide>
-          <SwiperSlide>
-            {/* <ImageSlide srcSet={`${ImageSlideTwo} 2x`} alt='img-slide' /> */}
-            <ImageSlide src={ImageSlideTwo} alt='img-slide' />
-          </SwiperSlide>
-          <SwiperSlide>
-            {/* <ImageSlide srcSet={`${ImageSlideThree} 2x`} alt='img-slide' /> */}
-            <ImageSlide src={ImageSlideThree} alt='img-slide' />
-          </SwiperSlide>
-          <SwiperSlide>
-            {/* <ImageSlide srcSet={`${ImageSlideFour} 2x`} alt='img-slide' /> */}
-            <ImageSlide src={ImageSlideFour} alt='img-slide' />
-          </SwiperSlide>
-          <SwiperSlide>
-            {/* <ImageSlide srcSet={`${ImageSlideFive} 2x`} alt='img-slide' /> */}
-            <ImageSlide src={ImageSlideFive} alt='img-slide' />
-          </SwiperSlide>
-          <SwiperSlide>
-            {/* <ImageSlide srcSet={`${ImageSlideSix} 2x`} alt='img-slide' /> */}
-            <ImageSlide src={ImageSlideSix} alt='img-slide' />
-          </SwiperSlide>
+          {dataSlide.map(item => (
+            <SwiperSlide key={item.id}>
+              <ImageSlide srcSet={`${item.image} 2x`} alt='slide-image' />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </CarouselSwiper>
     </BlockWrapper>

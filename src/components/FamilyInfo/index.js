@@ -141,7 +141,7 @@ const Image = styled.img`
   object-fit: cover;
 `;
 
-function FamilyInfo() {
+function FamilyInfo({ data, isVuQuy }) {
   return (
     <StyledFamilyInfo>
       <BlockImage>
@@ -149,44 +149,67 @@ function FamilyInfo() {
       </BlockImage>
       <BlockTop>
         <BlockTopItem>
-          <TextVocative>Nhà Gái</TextVocative>
-          <TextName>Nguyễn Xuân Hương & Nguyễn Thị Ngà</TextName>
-          <TextAddress>Thôn Mỹ Xuân 2, X. Hoà Thịnh, H. tây Hoà, Phú yên</TextAddress>
+          <TextVocative>
+            {isVuQuy ? data.vuQuyTitle : data.tanHonTitle}
+          </TextVocative>
+          <TextName>
+            {isVuQuy ? data.vuQuyParents : data.tanHonParents}
+          </TextName>
+          <TextAddress>
+            {isVuQuy ? data.vuQuyAddress : data.tanHonAddress}
+          </TextAddress>
         </BlockTopItem>
 
         <BlockTopItem>
-          <TextVocative>Nhà Trai</TextVocative>
-          <TextName>Trương Văn Lập & Võ Thị Thuộc</TextName>
-          <TextAddress> Thôn 2, X. Đức Hạnh, H. Đức Linh, Bình Thuận</TextAddress>
+          <TextVocative>
+            {!isVuQuy ? data.vuQuyTitle : data.tanHonTitle}
+          </TextVocative>
+          <TextName>
+            {!isVuQuy ? data.vuQuyParents : data.tanHonParents}
+          </TextName>
+          <TextAddress>
+            {!isVuQuy ? data.vuQuyAddress : data.tanHonAddress}
+          </TextAddress>
         </BlockTopItem>
       </BlockTop>
 
       <DashedLine />
-
       <BlockTop mb32>
-        <TextName colorInherit textInitial>Trân trọng báo tin Lễ Vu Quy</TextName>
+        <TextName colorInherit textInitial>
+          {data.noticeTitle}{' '}{isVuQuy ? data.vuQuyWedding : data.tanHonWedding}
+        </TextName>
         <TextName colorInherit textInitial> của con chúng tôi</TextName>
       </BlockTop>
 
       <BlockMiddle>
-        <MainName>Nguyễn Thị Thúy</MainName>
+        <MainName>
+          {isVuQuy ? data.vuQuyBride : data.tanHonGroom}
+        </MainName>
       </BlockMiddle>
-      <TextVocative displayBlock>Út Nữ <span>x</span> Út Nam</TextVocative>
+      <TextVocative displayBlock>
+        {isVuQuy ? data.vuQuyVocative : data.tanHonVocative} <span>x</span>{' '}
+        {!isVuQuy ? data.vuQuyVocative : data.tanHonVocative}
+      </TextVocative>
       <BlockMiddle>
-        <MainName>Trương Võ Hoài Nhân</MainName>
+        <MainName>{!isVuQuy ? data.vuQuyBride : data.tanHonGroom}</MainName>
       </BlockMiddle>
 
       <BlockTimeLine>
-        <TextName textInitial mb16 colorInherit>Hôn lễ được cử hành tại <span>Tư gia</span></TextName>
+        <TextName textInitial mb16 colorInherit>
+          {data.noticeWedding}<span> {data.weddingPlace}</span>
+        </TextName>
         <TextName textInitial fsInherit pdLeftRight>
-          <TextTime>8h30 | </TextTime>
-          <TextTime>26/12/2022</TextTime>
+          <TextTime>
+            {isVuQuy ? data.vuQuyTime : data.tanHonTime} |
+          </TextTime>
+          <TextTime>
+            {isVuQuy ? data.vuQuyDate : data.tanHonDate}
+          </TextTime>
         </TextName>
         <TextName textInitial fsInherit colorInherit>
-          (Nhằm ngày 4 tháng Chạp năm Nhâm Dần)
+          ({isVuQuy ? data.vuQuyNegativeDate : data.tanHonNegativeDate})
         </TextName>
       </BlockTimeLine>
-
     </StyledFamilyInfo>
   )
 }
