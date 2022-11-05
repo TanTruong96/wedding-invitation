@@ -16,7 +16,7 @@ const Title = styled.h1`
 
   text-align: center;
 `;
-const CopyRightText = styled.p`
+const CopyRightText = styled.div`
   display: block;
   color: ${props => props.theme.colors.brownBEA};
   font-size: 12px;

@@ -170,58 +170,58 @@ function CountDown({ timeStamp, finalDate }) {
 
   return (
     <StyledCountDown>
-      <Title>Mình cùng đếm ngược thời gian</Title>
+      <Title>Mình cùng đếm ngược thời gian:</Title>
       <BlockCountDown>
         <BlockTime>
           <TimeNumber>{timeCount.days}</TimeNumber>
           <TimeText>Ngày</TimeText>
           <Layer topRight>
-            <Image src={HeartImage} alt='img' />
+            <Image src={HeartImage} alt='countdown-image' />
           </Layer>
           <Layer bottomLeft typeOne>
-            <Image src={FlowerOneImage} alt='img' />
+            <Image src={FlowerOneImage} alt='countdown-image' />
           </Layer>
           <Layer bottomLeft typeTwo>
-            <Image src={FlowerTwoImage} alt='img' />
+            <Image src={FlowerTwoImage} alt='countdown-image' />
           </Layer>
         </BlockTime>
         <BlockTime>
           <TimeNumber>{timeCount.hours}</TimeNumber>
           <TimeText>Giờ</TimeText>
           <Layer topRight>
-            <Image src={HeartImage} alt='img' />
+            <Image src={HeartImage} alt='countdown-image' />
           </Layer>
           <Layer bottomLeft typeOne>
-            <Image src={FlowerOneImage} alt='img' />
+            <Image src={FlowerOneImage} alt='countdown-image' />
           </Layer>
           <Layer bottomLeft typeTwo>
-            <Image src={FlowerTwoImage} alt='img' />
+            <Image src={FlowerTwoImage} alt='countdown-image' />
           </Layer>
         </BlockTime>
         <BlockTime>
           <TimeNumber>{timeCount.minutes}</TimeNumber>
           <TimeText>Phút</TimeText>
           <Layer topRight>
-            <Image src={HeartImage} alt='img' />
+            <Image src={HeartImage} alt='countdown-image' />
           </Layer>
           <Layer bottomLeft typeOne>
-            <Image src={FlowerOneImage} alt='img' />
+            <Image src={FlowerOneImage} alt='countdown-image' />
           </Layer>
           <Layer bottomLeft typeTwo>
-            <Image src={FlowerTwoImage} alt='img' />
+            <Image src={FlowerTwoImage} alt='countdown-image' />
           </Layer>
         </BlockTime>
         <BlockTime>
           <TimeNumber>{timeCount.seconds}</TimeNumber>
           <TimeText>Giây</TimeText>
           <Layer topRight>
-            <Image src={HeartImage} alt='img' />
+            <Image src={HeartImage} alt='countdown-image' />
           </Layer>
           <Layer bottomLeft typeOne>
-            <Image src={FlowerOneImage} alt='img' />
+            <Image src={FlowerOneImage} alt='countdown-image' />
           </Layer>
           <Layer bottomLeft typeTwo>
-            <Image src={FlowerTwoImage} alt='img' />
+            <Image src={FlowerTwoImage} alt='countdown-image' />
           </Layer>
         </BlockTime>
       </BlockCountDown>

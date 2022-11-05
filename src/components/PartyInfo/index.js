@@ -78,7 +78,7 @@ function PartyInfo({ isVuQuy, data }) {
         <Image src={FlowerImage} alt='img' />
       </BlockImage> */}
       <Text>{data.mainTitle}</Text>
-      <MainText>{data.guess}</MainText>
+      <MainText>{data.guess}!</MainText>
 
       <Text>{data.meetingNote }</Text>
       <Text>{data.withFamily} <TextInside brown>{data.weddingPlace}</TextInside></Text>
@@ -109,7 +109,7 @@ function PartyInfo({ isVuQuy, data }) {
           </TextRed>
         </TimeItem>
       </TimeGroup>
-      <SubText>(Nhằm ngày{' '}
+      <SubText>( Nhằm ngày{' '}
         <TextInside orange>
           {isVuQuy ? data.vuQuyNegativeDate : data.tanHonNegativeDate}
         </TextInside>
@@ -120,7 +120,7 @@ function PartyInfo({ isVuQuy, data }) {
         {' '}năm{' '}
         <TextInside orange>
           {isVuQuy ? data.vuQuyNegativeYear : data.tanHonNegativeYear}
-        </TextInside>)
+        </TextInside> )
       </SubText>
 
       <Text>{data.presetTitle} <TextInside green>{data.guess}</TextInside></Text>

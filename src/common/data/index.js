@@ -47,12 +47,12 @@ export const FamilyInfoData = {
 
 }
 export const PartyInfoData = {
-  mainTitle: "Trân trọng kính mời",
+  mainTitle: "Trân trọng kính mời:",
   guess: "Quý khách",
   meetingNote: "Đến dự buổi tiệc",
   withFamily: "chung vui cùng gia đình chúng tôi tại",
   weddingPlace: "Tư gia",
-  weddingTimeTitle: "Vào lúc",
+  weddingTimeTitle: "Vào lúc:",
   vuQuyTime: "11:00",
   vuQuyWeekDays: "Thứ 2",
   vuQuyDate: 26,
@@ -72,7 +72,7 @@ export const PartyInfoData = {
   tanHonNegativeYear: "Nhâm Dần",
 
   presetTitle: "Sự hiện diện của",
-  fun: "là niềm vinh dự cho gia đình chúng tôi",
+  fun: "là niềm vinh dự cho gia đình chúng tôi!",
 }
 export const VUQUY_PATHNAME = "thuynguyen-nhantruong";
 export const TANHON_PATHNAME = "nhantruong-thuynguyen";

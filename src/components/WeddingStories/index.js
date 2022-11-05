@@ -79,7 +79,7 @@ const TextDescription = styled.p`
   display: block;
   max-width: 70%;
   color: ${props => props.theme.colors.brownBEA};
-  font-size: 12px;
+  font-size: 14px;
   font-style: italic;
 `;
 

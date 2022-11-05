@@ -10,6 +10,8 @@ const StyledWeddingPage = styled.div`
   display: flex;
   flex-direction: column;
   background-color: ${props => props.theme.colors.beigeF5E};
+
+  position: relative;
 `;
 
 const BlockWrapper = styled.div`
@@ -35,7 +37,6 @@ const BlockImage = styled.div`
   width: ${props => props.customWidth ? `${props.customWidth}px` : '100%'};
   height: ${props => props.customHeight ? `${props.customHeight}px` : 'auto'};
   position: absolute;
-  z-index: 1;
   top: 0;
   left: 0;
 `;

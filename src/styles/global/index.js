@@ -120,5 +120,21 @@ const GlobalStyle = createGlobalStyle`
     border-style: none;
     padding: 0;
   }
+
+  .ReactModalPortal {
+    .ReactModal__Overlay {
+      z-index: 999;
+    }
+    .ReactModal__Content {
+      outline: none;
+      border: 0;
+      box-shadow: none;
+      &:focus-visible {
+        outline: none;
+        border: 0;
+        box-shadow: none;
+      }
+    }
+  }
 `;
 export default GlobalStyle;

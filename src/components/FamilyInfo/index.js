@@ -207,7 +207,7 @@ function FamilyInfo({ data, isVuQuy }) {
           </TextTime>
         </TextName>
         <TextName textInitial fsInherit colorInherit>
-          ({isVuQuy ? data.vuQuyNegativeDate : data.tanHonNegativeDate})
+          ( {isVuQuy ? data.vuQuyNegativeDate : data.tanHonNegativeDate} )
         </TextName>
       </BlockTimeLine>
     </StyledFamilyInfo>

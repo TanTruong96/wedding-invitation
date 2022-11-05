@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
 import { TanHonData, VuQuyData, VUQUY_PATHNAME } from '../../common/data';
 import { StyledWeddingPage } from '../../common/styles';
@@ -9,11 +9,24 @@ import ImagesCarousel from '../../components/ImagesCarousel';
 import Introduce from '../../components/Introduce';
 import PartyInfo from '../../components/PartyInfo';
 import WeddingStories from '../../components/WeddingStories';
+import Location from '../../components/Location';
 
 function WeddingPage() {
   const location = useLocation();
+  const [scrollY, setScrollY] = useState(window.scrollY);
   const weddingData = location?.pathname.includes(VUQUY_PATHNAME) ? VuQuyData : TanHonData;
-  const isVuQuy =  location?.pathname.includes(VUQUY_PATHNAME) ? true : false
+  const isVuQuy =  location?.pathname.includes(VUQUY_PATHNAME) ? true : false;
+
+  useEffect(() => {
+    const handleScroll = event => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  },[]);
 
   return (
     <StyledWeddingPage>
@@ -28,7 +41,7 @@ function WeddingPage() {
       />
       <Footer />
       {/* <TransferInfo /> */}
-      {/* <Location /> */}
+      {scrollY >= 800 && <Location />}
     </StyledWeddingPage>
   )
 }
