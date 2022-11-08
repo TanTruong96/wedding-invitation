@@ -38,7 +38,7 @@ const BlockTopItem = styled.div`
 const TextName = styled.p`
   font-size: ${props => props.fsInherit ? 'inherit' : '18px'};
   font-weight: 600;
-  font-family: 'Playfair Display', sans-serif;
+  font-family: 'Playfair Display';
   text-align: center;
 
   line-height: 120%;
@@ -103,7 +103,7 @@ const BlockMiddle = styled.div`
   margin-bottom: 16px;
 `;
 const MainName = styled.h1`
-  font-family: 'Playfair Display', sans-serif;
+  font-family: 'Playfair Display';
   font-size: 32px;
   font-weight: bold;
   font-style: italic;

@@ -41,7 +41,11 @@ function WeddingPage() {
       />
       <Footer />
       {/* <TransferInfo /> */}
-      {scrollY >= 800 && <Location />}
+      {scrollY >= 800 && (
+        <Location
+          location={weddingData.location}
+        />
+      )}
     </StyledWeddingPage>
   )
 }

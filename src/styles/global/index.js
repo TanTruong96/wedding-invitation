@@ -60,7 +60,7 @@ const GlobalStyle = createGlobalStyle`
     overflow: auto;
     font-size: 14px;
     color: ${props => props.theme.colors.black565};
-    font-family: 'Playfair Display', sans-serif;
+    font-family: 'Playfair Display';
 
     margin: 0;
     -webkit-font-smoothing: antialiased;

@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
-import { MainTitle } from '../../common/styles';
+import { BlockImage, Image, MainTitle } from '../../common/styles';
+import BrideIcon from '../../assets/images/wedding-avt-female-img.png';
+import GroomIcon from '../../assets/images/wedding-avt-male-img.png';
+import MomoTransfer from '../../assets/images/img-money-transfer.png';
 
 const StyledTransferInfo = styled.div`
   display: flex;
   flex-direction: column;
-
-  padding: 48px 16px;
 `;
 const TabsHeader = styled.div`
   display: flex;
@@ -14,22 +15,25 @@ const TabsHeader = styled.div`
 `;
 const TabInfo = styled.div`
   flex: 1 0 34%;
-  height: 40px;
-
-  padding: 0 24px;
+  padding: 12px 24px;
 
   text-align: center;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 
   font-size: 16px;
   cursor: pointer;
+  opacity: 0.6;
 
   ${props => props.tabActive && css`
-    color: ${props => props.theme.colors.black2C2};
-    font-weight: 500;
-    border-bottom: 1px solid ${props => props.theme.colors.black2C2};
+    opacity: 1;
+    border-bottom: 1px solid ${props => props.theme.colors.green386};
+
+    span {
+      color: ${props => props.theme.colors.black2C2};
+      font-weight: 600;
+    }
   `}
 `;
 const TabsContent = styled.div`
@@ -61,6 +65,21 @@ const TextTitle = styled.h4`
 const TextDes = styled.span`
   font-size: 16px;
 `;
+const CustomMainTitle = styled(MainTitle)`
+  font-size: 20px;
+  margin-bottom: 24px;
+`;
+const CustomBlockImage = styled(BlockImage)`
+  position: unset;
+  border-radius: ${props => props.noBackground ? "4px" : "50%"};
+  padding: 4px;
+  background-color: ${props => props.noBackground ? "unset" : props.theme.colors.green386};
+
+  img {
+    border-radius: ${props => props.noBackground ? "4px" : "50%"};
+    border: 1px solid ${props => props.theme.colors.whiteFFF};
+  }
+`;
 
 const data = [
   {
@@ -70,14 +89,18 @@ const data = [
     phoneNumber: '0977325665',
     bankNumber: '0977325665',
     momoNumber: '0977325665',
+    icon: BrideIcon,
+    transfer: "https://me.momo.vn/9vI3uQIztgszsDFoIwfZ",
   },
   {
     id: 2,
     name: 'Trương Võ Hoài Nhân',
-    representative: 'Chú rễ',
+    representative: 'Chú rể',
     phoneNumber: '0902667040',
     bankNumber: '828384859999',
     momoNumber: '0902667040',
+    icon: GroomIcon,
+    transfer: "https://me.momo.vn/9vI3uQIztgszsDFoIwfZ",
   },
 ];
 
@@ -94,24 +117,41 @@ function TransferInfo() {
 
   return (
     <StyledTransferInfo>
-      <MainTitle>
+      <CustomMainTitle>
         Gửi lời chúc đến đôi uyên ương
-      </MainTitle>
+      </CustomMainTitle>
       <TabsHeader>
         {data.map(item => (
           <TabInfo
+            key={item.id}
             tabActive={tabActive === item.id}
             onClick={() => handleActiveTabClick(item.id)}
           >
-            {item.representative}
+            <CustomBlockImage customWidth={40} customHeight={40}>
+              <Image src={item.icon} alt="transfer-icon" />
+            </CustomBlockImage>
+            <span>{item.representative}</span>
           </TabInfo>
         ))}
       </TabsHeader>
       <TabsContent>
-        <RowInfo><TextTitle widthFull>{tabInfo?.name}</TextTitle></RowInfo>
-        <RowInfo><TextTitle>SĐT </TextTitle><TextDes>{tabInfo.phoneNumber}</TextDes></RowInfo>
-        <RowInfo><TextTitle>MB Bank </TextTitle><TextDes>{tabInfo.bankNumber}</TextDes></RowInfo>
-        <RowInfo><TextTitle>Momo </TextTitle><TextDes>{tabInfo.momoNumber}</TextDes></RowInfo>
+        <RowInfo>
+          <TextTitle widthFull>
+            {tabInfo?.name}
+          </TextTitle>
+        </RowInfo>
+        {/* <RowInfo><TextTitle>SĐT </TextTitle><TextDes>{tabInfo.phoneNumber}</TextDes></RowInfo> */}
+        <RowInfo>
+          <TextTitle>MB Bank </TextTitle>
+          <TextDes>{tabInfo.bankNumber}</TextDes>
+        </RowInfo>
+        <RowInfo>
+          <CustomBlockImage noBackground>
+            <a href={tabInfo.transfer} target="_blank" without rel="noreferrer">
+              <Image src={MomoTransfer} alt="transfer-image" />
+            </a>
+          </CustomBlockImage>
+        </RowInfo>
       </TabsContent>
     </StyledTransferInfo>
   )

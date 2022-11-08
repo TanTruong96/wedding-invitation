@@ -82,6 +82,7 @@ export const VuQuyData = {
   partyInfo: PartyInfoData,
   timeStamp: moment(new Date()).format('YYYY-MM-DD HH:mm:ss'),
   finalDate: moment('2022-12-26 11:00:00', 'YYYY-MM-DD HH:mm:ss'),
+  location: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.676482773882!2d109.24225059999999!3d12.928502699999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x316fe6e41cad2e81%3A0x7a62b9cf8c2d1020!2zQ2FuaCBUaW5oLCBIb8OgIFRo4buLbmgsIFTDonkgSMOyYSwgUGjDuiBZw6pu!5e0!3m2!1svi!2s!4v1667831518241!5m2!1svi!2s",
 }
 export const TanHonData = {
   introduce: {...TanHonIntroduceData},
@@ -89,4 +90,5 @@ export const TanHonData = {
   partyInfo: {...PartyInfoData},
   timeStamp: moment(new Date()).format('YYYY-MM-DD HH:mm:ss'),
   finalDate: moment('2023-01-01 11:00:00', 'YYYY-MM-DD HH:mm:ss'),
+  location: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3914.7608611819373!2d107.50461159999999!3d11.1311798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317443df4ea04ec5%3A0xfc0134e4a30b945f!2zTmjDoCBD4bunYSBIb8OgaSBOaMOibg!5e0!3m2!1svi!2s!4v1667832037520!5m2!1svi!2s",
 }
