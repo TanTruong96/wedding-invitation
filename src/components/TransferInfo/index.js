@@ -12,6 +12,10 @@ const StyledTransferInfo = styled.div`
 const TabsHeader = styled.div`
   display: flex;
   align-items: center;
+
+  ${props => props.rowReverse && css`
+    flex-direction: row-reverse;
+  `}
 `;
 const TabInfo = styled.div`
   flex: 1 0 34%;
@@ -90,7 +94,7 @@ const data = [
     bankNumber: '0977325665',
     momoNumber: '0977325665',
     icon: BrideIcon,
-    transfer: "https://me.momo.vn/9vI3uQIztgszsDFoIwfZ",
+    transfer: "https://me.momo.vn/MRI4ugF5F8U5tPCXsQsn",
   },
   {
     id: 2,
@@ -105,7 +109,7 @@ const data = [
 ];
 
 
-function TransferInfo() {
+function TransferInfo({ isVuQuy }) {
   const [tabActive, setTabActive] = useState(1);
   const [tabInfo, setTabInfo] = useState(data[0]);
 
@@ -120,7 +124,7 @@ function TransferInfo() {
       <CustomMainTitle>
         Gửi lời chúc đến đôi uyên ương
       </CustomMainTitle>
-      <TabsHeader>
+      <TabsHeader rowReverse={!isVuQuy}>
         {data.map(item => (
           <TabInfo
             key={item.id}

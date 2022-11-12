@@ -97,7 +97,6 @@ const Date = styled(Title)`
 `;
 const StyledSpan = styled.span`
   padding: 0 4px;
-  font-family: "UTMViceroyJF";
   color: ${props => props.theme.colors.yellowFFD};
 `;
 // const BlockDecor = styled.div`

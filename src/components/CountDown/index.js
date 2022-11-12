@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import styled, { css } from 'styled-components';
-import HeartImage from '../../assets/images/heart-img.png';
-import { BlockImage, BlockWrapper, Image } from '../../common/styles';
-import FlowerOneImage from '../../assets/images/wedding-flower-5-img.png';
-import FlowerTwoImage from '../../assets/images/wedding-flower-6-img.png';
-import moment from 'moment/moment';
+import moment from "moment/moment";
+import React, { useEffect, useState } from "react";
+import styled, { css } from "styled-components";
+import HeartImage from "../../assets/images/heart-img.png";
+import FlowerOneImage from "../../assets/images/wedding-flower-5-img.png";
+import FlowerTwoImage from "../../assets/images/wedding-flower-6-img.png";
+import { BlockImage, BlockWrapper, Image } from "../../common/styles";
 
 const StyledCountDown = styled(BlockWrapper)`
-  background-color: ${props => props.theme.colors.orangeC05};
+  background-color: ${(props) => props.theme.colors.orangeC05};
 `;
 const Title = styled.h2`
   font-size: 20px;
   text-align: center;
-  color: ${props => props.theme.colors.whiteFFF};
+  color: ${(props) => props.theme.colors.whiteFFF};
   margin-bottom: 24px;
 `;
 const BlockCountDown = styled.div`
@@ -23,7 +23,7 @@ const BlockCountDown = styled.div`
 `;
 const BlockTime = styled.div`
   width: calc(25% - 12px);
-  border: 1px solid ${props => props.theme.colors.whiteFFF};
+  border: 1px solid ${(props) => props.theme.colors.whiteFFF};
   border-radius: 16px;
   padding: 6px;
 
@@ -42,29 +42,33 @@ const TimeNumber = styled.p`
   line-height: 120%;
   letter-spacing: 0.05em;
 
-  color: ${props => props.theme.colors.whiteFFF};
+  color: ${(props) => props.theme.colors.whiteFFF};
 `;
 const TimeText = styled.p`
   font-size: 18px;
   font-weight: 500;
   margin-top: 12px;
-  color: ${props => props.theme.colors.whiteFFF};
+  color: ${(props) => props.theme.colors.whiteFFF};
 `;
 const Layer = styled(BlockImage)`
-  width: ${props => props.typeTwo ? '26px' : '20px'};
+  width: ${(props) => (props.typeTwo ? "26px" : "20px")};
 
-  ${props => props.topRight && css`
-    top: -8px;
-    right: -6px;
-    left: unset;
-  `}
+  ${(props) =>
+    props.topRight &&
+    css`
+      top: -8px;
+      right: -6px;
+      left: unset;
+    `}
 
-  ${props => props.bottomLeft && css`
-    top: unset;
-    left: -6px;
-    bottom: ${props => props.typeOne ? '0px' : '-14px'};
-    z-index: ${props => props.typeOne ? 9 : 1};
-  `}
+  ${(props) =>
+    props.bottomLeft &&
+    css`
+      top: unset;
+      left: -6px;
+      bottom: ${(props) => (props.typeOne ? "0px" : "-14px")};
+      z-index: ${(props) => (props.typeOne ? 9 : 1)};
+    `}
 `;
 
 function CountDown({ timeStamp, finalDate }) {
@@ -76,16 +80,19 @@ function CountDown({ timeStamp, finalDate }) {
   });
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const beforeMidnight = (finalDate) => {
-    const today = moment(new Date(timeStamp)).format('YYYY-MM-DD HH:mm:ss');
-    const dateRest = moment(finalDate, 'YYYY-MM-DD HH:mm:ss').format('YYYY-MM-DD HH:mm:ss');
+    const today = moment(new Date(timeStamp)).format("YYYY-MM-DD HH:mm:ss");
+    const dateRest = moment(finalDate, "YYYY-MM-DD HH:mm:ss").format(
+      "YYYY-MM-DD HH:mm:ss"
+    );
 
     const isBeforeDate = moment(today).isSameOrBefore(dateRest);
     if (isBeforeDate) {
       const now = new Date(timeStamp);
-      const daysLeft = Number(moment(dateRest).diff(today, 'days'));
-      const hoursLeft = 23 - now.getHours();
-      let minutesLeft = 59 - now.getMinutes();
-      let secondsLeft = 59 - now.getSeconds();
+      const expire = new Date(dateRest);
+      const daysLeft = Number(moment(dateRest).diff(today, "days"));
+      const hoursLeft = 23 - now.getHours() + expire.getHours();
+      let minutesLeft = 59 - now.getMinutes() + expire.getMinutes();
+      let secondsLeft = 59 - now.getSeconds() + expire.getSeconds();
 
       //format 0 prefixes
       if (minutesLeft < 10) minutesLeft = 0 + minutesLeft;
@@ -112,7 +119,11 @@ function CountDown({ timeStamp, finalDate }) {
   };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const countDown = () => {
-    const c_seconds = convertTimeToSeconds(timeCount.hours, timeCount.minutes, timeCount.seconds);
+    const c_seconds = convertTimeToSeconds(
+      timeCount.hours,
+      timeCount.minutes,
+      timeCount.seconds
+    );
     if (c_seconds) {
       // seconds change
       timeCount.seconds > 0
@@ -151,15 +162,19 @@ function CountDown({ timeStamp, finalDate }) {
   };
 
   useEffect(() => {
-    return finalDate ? beforeMidnight(finalDate) : '';
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    return finalDate ? beforeMidnight(finalDate) : "";
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [finalDate]);
 
   useEffect(() => {
     if (!timeCount) return;
 
     const intervalId = setInterval(() => {
-      const c_seconds = convertTimeToSeconds(timeCount.hours, timeCount.minutes, timeCount.seconds);
+      const c_seconds = convertTimeToSeconds(
+        timeCount.hours,
+        timeCount.minutes,
+        timeCount.seconds
+      );
       c_seconds <= 0 ? clearInterval(intervalId) : countDown();
     }, 1000);
 
@@ -176,57 +191,57 @@ function CountDown({ timeStamp, finalDate }) {
           <TimeNumber>{timeCount.days}</TimeNumber>
           <TimeText>Ngày</TimeText>
           <Layer topRight>
-            <Image src={HeartImage} alt='countdown-image' />
+            <Image src={HeartImage} alt="countdown-image" />
           </Layer>
           <Layer bottomLeft typeOne>
-            <Image src={FlowerOneImage} alt='countdown-image' />
+            <Image src={FlowerOneImage} alt="countdown-image" />
           </Layer>
           <Layer bottomLeft typeTwo>
-            <Image src={FlowerTwoImage} alt='countdown-image' />
+            <Image src={FlowerTwoImage} alt="countdown-image" />
           </Layer>
         </BlockTime>
         <BlockTime>
           <TimeNumber>{timeCount.hours}</TimeNumber>
           <TimeText>Giờ</TimeText>
           <Layer topRight>
-            <Image src={HeartImage} alt='countdown-image' />
+            <Image src={HeartImage} alt="countdown-image" />
           </Layer>
           <Layer bottomLeft typeOne>
-            <Image src={FlowerOneImage} alt='countdown-image' />
+            <Image src={FlowerOneImage} alt="countdown-image" />
           </Layer>
           <Layer bottomLeft typeTwo>
-            <Image src={FlowerTwoImage} alt='countdown-image' />
+            <Image src={FlowerTwoImage} alt="countdown-image" />
           </Layer>
         </BlockTime>
         <BlockTime>
           <TimeNumber>{timeCount.minutes}</TimeNumber>
           <TimeText>Phút</TimeText>
           <Layer topRight>
-            <Image src={HeartImage} alt='countdown-image' />
+            <Image src={HeartImage} alt="countdown-image" />
           </Layer>
           <Layer bottomLeft typeOne>
-            <Image src={FlowerOneImage} alt='countdown-image' />
+            <Image src={FlowerOneImage} alt="countdown-image" />
           </Layer>
           <Layer bottomLeft typeTwo>
-            <Image src={FlowerTwoImage} alt='countdown-image' />
+            <Image src={FlowerTwoImage} alt="countdown-image" />
           </Layer>
         </BlockTime>
         <BlockTime>
           <TimeNumber>{timeCount.seconds}</TimeNumber>
           <TimeText>Giây</TimeText>
           <Layer topRight>
-            <Image src={HeartImage} alt='countdown-image' />
+            <Image src={HeartImage} alt="countdown-image" />
           </Layer>
           <Layer bottomLeft typeOne>
-            <Image src={FlowerOneImage} alt='countdown-image' />
+            <Image src={FlowerOneImage} alt="countdown-image" />
           </Layer>
           <Layer bottomLeft typeTwo>
-            <Image src={FlowerTwoImage} alt='countdown-image' />
+            <Image src={FlowerTwoImage} alt="countdown-image" />
           </Layer>
         </BlockTime>
       </BlockCountDown>
     </StyledCountDown>
-  )
+  );
 }
 
-export default CountDown
+export default CountDown;

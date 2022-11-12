@@ -2,15 +2,6 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
-    font-family: 'SVN-Wallows';
-    src: url('../../assets/fonts/SVN-Wallows.woff2') format('woff2'),
-        url('../../assets/fonts/SVN-Wallows.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
     font-family: 'UTMViceroyJF';
     src: url('../../assets/fonts/UTMViceroyJF.woff2') format('woff2'),
         url('../../assets/fonts/UTMViceroyJF.woff') format('woff');

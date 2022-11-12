@@ -7,8 +7,8 @@ import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import HeartImage from '../../assets/images/heart-img.png';
 import ImageSlideOne from '../../assets/images/img-wedding-album-10.jpg';
-import ImageSlideEight from '../../assets/images/img-wedding-album-11.jpg';
-import ImageSlideNine from '../../assets/images/img-wedding-album-12.jpg';
+// import ImageSlideEight from '../../assets/images/img-wedding-album-11.jpg';
+// import ImageSlideNine from '../../assets/images/img-wedding-album-12.jpg';
 import ImageSlideThree from '../../assets/images/img-wedding-album-3.jpg';
 import ImageSlideFour from '../../assets/images/img-wedding-album-4.jpg';
 import ImageSlideTwo from '../../assets/images/img-wedding-album-7.jpg';
@@ -121,14 +121,14 @@ const dataSlide = [
     id: 7,
     image: ImageSlideSeven,
   },
-  {
-    id: 8,
-    image: ImageSlideEight,
-  },
-  {
-    id: 9,
-    image: ImageSlideNine,
-  },
+  // {
+  //   id: 8,
+  //   image: ImageSlideEight,
+  // },
+  // {
+  //   id: 9,
+  //   image: ImageSlideNine,
+  // },
 ];
 
 function ImagesCarousel() {

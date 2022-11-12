@@ -30,7 +30,7 @@ const CustomBlockImage = styled(BlockImage)`
   background-color: ${props => props.theme.colors.yellowFFD};
 `;
 
-function Location({ location }) {
+function Location({ isVuQuy, location }) {
   const [isMapOpen, setMapOpen] = useState(false);
   const [isTransferOpen, setTransferOpen] = useState(false);
 
@@ -76,7 +76,7 @@ function Location({ location }) {
         isOpen={isTransferOpen}
         onClose={() => setTransferOpen(false)}
       >
-        <TransferInfo />
+        <TransferInfo isVuQuy={isVuQuy}/>
       </CustomModal>
     </StyledLocation>
   )

@@ -81,7 +81,7 @@ function PartyInfo({ isVuQuy, data }) {
       <MainText>{data.guess}!</MainText>
 
       <Text>{data.meetingNote }</Text>
-      <Text>{data.withFamily} <TextInside brown>{data.weddingPlace}</TextInside></Text>
+      <Text>{data.withFamily}: <TextInside brown>{data.weddingPlace}</TextInside></Text>
       <Text mt48>{data.weddingTimeTitle}</Text>
 
       <TimeGroup>
@@ -123,7 +123,7 @@ function PartyInfo({ isVuQuy, data }) {
         </TextInside> )
       </SubText>
 
-      <Text>{data.presetTitle} <TextInside green>{data.guess}</TextInside></Text>
+      <Text>{data.presetTitle}: <TextInside green>{data.guess}</TextInside></Text>
       <Text>{data.fun}</Text>
     </BlockWrapper>
   )

@@ -178,7 +178,7 @@ function FamilyInfo({ data, isVuQuy }) {
         <TextName colorInherit textInitial>
           {data.noticeTitle}{' '}{isVuQuy ? data.vuQuyWedding : data.tanHonWedding}
         </TextName>
-        <TextName colorInherit textInitial> của con chúng tôi</TextName>
+        <TextName colorInherit textInitial> của con chúng tôi:</TextName>
       </BlockTop>
 
       <BlockMiddle>
@@ -196,7 +196,7 @@ function FamilyInfo({ data, isVuQuy }) {
 
       <BlockTimeLine>
         <TextName textInitial mb16 colorInherit>
-          {data.noticeWedding}<span> {data.weddingPlace}</span>
+          {data.noticeWedding}:<span> {data.weddingPlace}</span>
         </TextName>
         <TextName textInitial fsInherit pdLeftRight>
           <TextTime>
