@@ -10,6 +10,7 @@ const StyledWeddingPage = styled.div`
   display: flex;
   flex-direction: column;
   background-color: ${props => props.theme.colors.beigeF5E};
+  font-family: "Playfair Display";
 
   position: relative;
 `;
