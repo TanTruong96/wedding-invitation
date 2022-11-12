@@ -110,7 +110,7 @@ const data = [
 
 
 function TransferInfo({ isVuQuy }) {
-  const [tabActive, setTabActive] = useState(1);
+  const [tabActive, setTabActive] = useState(isVuQuy ? 1 : 2);
   const [tabInfo, setTabInfo] = useState(data[0]);
 
   const handleActiveTabClick = (id) => {
