@@ -111,7 +111,7 @@ const data = [
 
 function TransferInfo({ isVuQuy }) {
   const [tabActive, setTabActive] = useState(isVuQuy ? 1 : 2);
-  const [tabInfo, setTabInfo] = useState(data[0]);
+  const [tabInfo, setTabInfo] = useState(isVuQuy ? data[0] : data[1]);
 
   const handleActiveTabClick = (id) => {
     const info = data.find(item => item.id === id);
