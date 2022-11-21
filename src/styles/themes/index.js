@@ -7,7 +7,7 @@ export const theme = {
     brown626: '#626150',
     brown916: '#91641E',
     brown594: '#594A3D',
-    beigeB49: '#BEA272',
+    beigeBEA: '#BEA272',
     black1F2: '#1F2814',
     black161: '#161410',
     black2C2: '#2C2C22',
