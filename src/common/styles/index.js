@@ -9,7 +9,7 @@ const StyledWeddingPage = styled.div`
 
   display: flex;
   flex-direction: column;
-  background-color: ${props => props.theme.colors.beigeF5E};
+  background-color: ${props => props.theme.colors.beigeFEF};
   font-family: "Playfair Display";
 
   position: relative;
@@ -54,7 +54,7 @@ const Image = styled.img`
 const DashedLine = styled.div`
   width: 120px;
   height: 2px;
-  border-top: 2px dashed ${props => props.theme.colors.brownBEA};
+  border-top: 2px dashed ${props => props.theme.colors.beigeB49};
   margin: ${props => (props.top || props.bottom) ? '0 auto' : '40px auto'};
 
   position: ${props => (props.top || props.bottom) ? 'absolute' : 'inherit'};

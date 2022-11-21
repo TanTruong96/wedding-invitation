@@ -49,7 +49,7 @@ const TextTitle = styled(TextName)`
   line-height: 120%;
   text-align: right;
   text-transform: uppercase;
-  color: ${props => props.theme.colors.brownBEA};
+  color: ${props => props.theme.colors.beigeB49};
 `;
 const TextDate = styled(TextTitle)`
   color: ${props => props.theme.colors.green386};
@@ -78,7 +78,7 @@ const BlockBottom = styled.div`
 const TextDescription = styled.p`
   display: block;
   max-width: 70%;
-  color: ${props => props.theme.colors.brownBEA};
+  color: ${props => props.theme.colors.beigeB49};
   font-size: 14px;
   font-style: italic;
 `;

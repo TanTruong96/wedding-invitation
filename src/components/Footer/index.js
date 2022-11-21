@@ -18,7 +18,7 @@ const Title = styled.h1`
 `;
 const CopyRightText = styled.div`
   display: block;
-  color: ${props => props.theme.colors.brownBEA};
+  color: ${props => props.theme.colors.beigeB49};
   font-size: 12px;
 
   display: flex;

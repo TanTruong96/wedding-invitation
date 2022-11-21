@@ -46,7 +46,7 @@ const TextName = styled.p`
   color: ${props => props.theme.colors.green386};
 
   ${props => props.colorInherit && css`
-    color: ${props => props.theme.colors.brownBEA};
+    color: ${props => props.theme.colors.beigeB49};
     font-weight: 600;
   `}
 
@@ -67,9 +67,9 @@ const TextVocative = styled(TextName)`
   font-size: 18px;
   font-weight: 500;
   text-align: center;
-  color: ${props => props.theme.colors.brownBEA};
+  color: ${props => props.theme.colors.beigeB49};
 
-  border-bottom: 1px dashed ${props => props.theme.colors.brownBEA};
+  border-bottom: 1px dashed ${props => props.theme.colors.beigeB49};
   width: fit-content;
 
   ${props => props.displayBlock && css`
@@ -90,14 +90,14 @@ const TextAddress = styled(TextName)`
   font-weight: 500;
   font-size: 16px;
   font-style: italic;
-  color: ${props => props.theme.colors.brownBEA};
+  color: ${props => props.theme.colors.beigeB49};
 `;
 const DashedLine = styled.div`
   width: 150px;
   height: 2px;
   margin: 0 auto 40px;
 
-  border-bottom: 2px dashed ${props => props.theme.colors.brownBEA};
+  border-bottom: 2px dashed ${props => props.theme.colors.beigeB49};
 `;
 const BlockMiddle = styled.div`
   margin-bottom: 16px;
@@ -118,7 +118,7 @@ const MainName = styled.h1`
 const TextTime = styled.span`
   font-size: 16px;
   font-weight: inherit;
-  color: ${props => props.theme.colors.brownBEA};
+  color: ${props => props.theme.colors.beigeB49};
   padding: 0 2px;
 `;
 const BlockTimeLine = styled.div`

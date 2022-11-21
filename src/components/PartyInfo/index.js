@@ -8,7 +8,7 @@ const Text = styled.p`
 
   margin-bottom: 8px;
   margin-top: ${props => props.mt48 ? '48px' : 0};
-  color: ${props => props.theme.colors.brownBEA};
+  color: ${props => props.theme.colors.beigeB49};
 `;
 const MainText = styled.h2`
   font-size: 24px;
@@ -61,7 +61,7 @@ const TextInside = styled.span`
   `}
 
   ${props => props.brown && css`
-    color: ${props => props.theme.colors.brownBEA};
+    color: ${props => props.theme.colors.beigeB49};
     font-style: italic;
   `}
 

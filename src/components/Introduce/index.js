@@ -85,7 +85,7 @@ const Name = styled(Title)`
 
   margin-bottom: 12px;
   font-style: italic;
-  color: ${props => props.colorBrownBEA ? props.theme.colors.brownBEA : props.theme.colors.whiteFFF};
+  color: ${props => props.colorbeigeB49 ? props.theme.colors.beigeB49 : props.theme.colors.whiteFFF};
 `;
 const Date = styled(Title)`
   margin-bottom: 0;
@@ -111,7 +111,7 @@ const StyledSpan = styled.span`
 // const DashedLine = styled.div`
 //   width: 117px;
 //   flex-shrink: 0;
-//   border-top: 2px dashed ${props => props.theme.colors.brownBEA};
+//   border-top: 2px dashed ${props => props.theme.colors.beigeB49};
 
 //   margin-top: 50px;
 // `;
