@@ -14,6 +14,7 @@ import ImageSlideFour from '../../assets/images/img-wedding-album-4.jpg';
 import ImageSlideTwo from '../../assets/images/img-wedding-album-7.jpg';
 import ImageSlideSix from '../../assets/images/img-wedding-album-8.jpg';
 import ImageSlideFive from '../../assets/images/img-wedding-album-9.jpg';
+import ImageSlideEight from '../../assets/images/img-wedding-album-13.jpg';
 import ImageSlideSeven from '../../assets/images/wedding-banner-2-img.jpg';
 import { BlockWrapper, MainTitle } from '../../common/styles';
 
@@ -121,10 +122,10 @@ const dataSlide = [
     id: 7,
     image: ImageSlideSeven,
   },
-  // {
-  //   id: 8,
-  //   image: ImageSlideEight,
-  // },
+  {
+    id: 8,
+    image: ImageSlideEight,
+  },
   // {
   //   id: 9,
   //   image: ImageSlideNine,

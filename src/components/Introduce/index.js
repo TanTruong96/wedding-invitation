@@ -1,13 +1,14 @@
-import React from 'react';
-import styled, { css } from 'styled-components';
-import WeddingBanner from '../../assets/images/img-wedding-album-1.jpg';
+import React from "react";
+import styled, { css } from "styled-components";
+import TanHonBanner from "../../assets/images/img-wedding-album-16.jpg";
+import VuQuyBanner from "../../assets/images/img-wedding-album-17.jpg";
 
 const StyledIntroduce = styled.div`
   width: 100%;
 
   position: relative;
   overflow: hidden;
-  /* background-color: ${props => props.theme.colors.green386}; */
+  /* background-color: ${(props) => props.theme.colors.green386}; */
 
   display: flex;
   flex-direction: column;
@@ -21,10 +22,12 @@ const BlockImage = styled.div`
   width: 100%;
   height: auto;
 
-  ${props => props.noMargin && css`
-    margin-top: 0;
-    margin-bottom: 0;
-  `}
+  ${(props) =>
+    props.noMargin &&
+    css`
+      margin-top: 0;
+      margin-bottom: 0;
+    `}
 
   &:before {
     content: "";
@@ -32,7 +35,7 @@ const BlockImage = styled.div`
     width: 100%;
     height: 100vh;
 
-    background-color: ${props => props.theme.colors.black2C2};
+    background-color: ${(props) => props.theme.colors.black2C2};
     opacity: 0.2;
   }
 
@@ -45,15 +48,19 @@ const Image = styled.img`
   width: 100%;
   object-fit: cover;
 
-  ${props => props.matrix && css`
-    -moz-transform: matrix(-1, 0, 0, 1, 0, 0);
-    -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
-    -o-transform: matrix(-1, 0, 0, 1, 0, 0);
-  `}
+  ${(props) =>
+    props.matrix &&
+    css`
+      -moz-transform: matrix(-1, 0, 0, 1, 0, 0);
+      -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
+      -o-transform: matrix(-1, 0, 0, 1, 0, 0);
+    `}
 
-  ${props => props.widthFit && css`
-    width: 110px;
-  `}
+  ${(props) =>
+    props.widthFit &&
+    css`
+      width: 110px;
+    `}
 `;
 const BlockContent = styled.div`
   width: 100%;
@@ -63,10 +70,12 @@ const BlockContent = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  ${props => props.topContent && css`
-    flex-grow: unset;
-    margin-bottom: 16px;
-  `}
+  ${(props) =>
+    props.topContent &&
+    css`
+      flex-grow: unset;
+      margin-bottom: 16px;
+    `}
 `;
 const Title = styled.h1`
   font-size: 24px;
@@ -76,7 +85,7 @@ const Title = styled.h1`
   letter-spacing: 0.05em;
 
   margin-bottom: 16px;
-  color: ${props => props.theme.colors.yellowFFD};
+  color: ${(props) => props.theme.colors.yellowFFD};
 `;
 const Name = styled(Title)`
   font-size: 42px;
@@ -85,7 +94,10 @@ const Name = styled(Title)`
 
   margin-bottom: 12px;
   font-style: italic;
-  color: ${props => props.colorbeigeB49 ? props.theme.colors.beigeB49 : props.theme.colors.whiteFFF};
+  color: ${(props) =>
+    props.colorbeigeB49
+      ? props.theme.colors.beigeB49
+      : props.theme.colors.whiteFFF};
 `;
 const Date = styled(Title)`
   margin-bottom: 0;
@@ -97,7 +109,7 @@ const Date = styled(Title)`
 `;
 const StyledSpan = styled.span`
   padding: 0 4px;
-  color: ${props => props.theme.colors.yellowFFD};
+  color: ${(props) => props.theme.colors.yellowFFD};
 `;
 // const BlockDecor = styled.div`
 //   width: 100%;
@@ -116,13 +128,17 @@ const StyledSpan = styled.span`
 //   margin-top: 50px;
 // `;
 
-function Introduce({ data }) {
+function Introduce({ isVuQuy, data }) {
   return (
     <StyledIntroduce>
       <BlockImage>
-        <Image className='introduce-bg-image' src={WeddingBanner} alt='banner-image' />
+        <Image
+          className="introduce-bg-image"
+          src={isVuQuy ? VuQuyBanner : TanHonBanner}
+          alt="banner-image"
+        />
       </BlockImage>
-      <BlockContent>
+      {/* <BlockContent>
         <Title>The wedding of</Title>
         <Name>{data.mainTitle}</Name>
         <Date>
@@ -130,7 +146,7 @@ function Introduce({ data }) {
           <StyledSpan> {data.dateTime.month} </StyledSpan>
           <StyledSpan>. {data.dateTime.year}</StyledSpan>
         </Date>
-      </BlockContent>
+      </BlockContent> */}
       {/* <BlockDecor>
         <BlockImage noMargin>
           <Image matrix widthFit src={ImageDecor} alt='img' />
@@ -141,7 +157,7 @@ function Introduce({ data }) {
         </BlockImage>
       </BlockDecor> */}
     </StyledIntroduce>
-  )
+  );
 }
 
-export default Introduce
+export default Introduce;

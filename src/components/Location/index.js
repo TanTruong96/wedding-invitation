@@ -24,7 +24,7 @@ const StyledLocation = styled.div`
 const CustomBlockImage = styled(BlockImage)`
   position: unset;
   cursor: pointer;
-  padding: 4px;
+  padding: 6px;
 
   border-radius: 50%;
   background-color: ${props => props.theme.colors.yellowFFD};
@@ -38,8 +38,8 @@ function Location({ isVuQuy, location }) {
     <StyledLocation>
       {/* Money Transfer */}
       <CustomBlockImage
-        customWidth={40}
-        customHeight={40}
+        customWidth={46}
+        customHeight={46}
         onClick={() => setTransferOpen(true)}
       >
         <Image src={MoneyTransfer} alt='money-icon' />
@@ -47,8 +47,8 @@ function Location({ isVuQuy, location }) {
 
       {/* Location */}
       <CustomBlockImage
-        customWidth={40}
-        customHeight={40}
+        customWidth={46}
+        customHeight={46}
         onClick={() => setMapOpen(true)}
       >
         <Image src={LocationIcon} alt='location-icon' />

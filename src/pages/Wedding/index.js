@@ -42,7 +42,7 @@ function WeddingPage() {
 
   return (
     <StyledWeddingPage>
-      <Introduce data={weddingData.introduce} />
+      <Introduce isVuQuy={isVuQuy} data={weddingData.introduce} />
       <FamilyInfo isVuQuy={isVuQuy} data={weddingData.familyInfo} />
       <ImagesCarousel />
       <WeddingStories isVuQuy={isVuQuy} data={weddingData.introduce} />
